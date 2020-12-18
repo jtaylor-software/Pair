@@ -17,6 +17,7 @@
 		8F16CB0D258D130B00D70C2C /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CB0C258D130B00D70C2C /* CoreDataStack.swift */; };
 		8F16CB10258D13AC00D70C2C /* Person+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CB0F258D13AC00D70C2C /* Person+Convenience.swift */; };
 		8F16CB13258D159000D70C2C /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CB12258D159000D70C2C /* PersonController.swift */; };
+		8F16CB1E258D37A200D70C2C /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16CB1D258D37A200D70C2C /* ArrayExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8F16CB0C258D130B00D70C2C /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		8F16CB0F258D13AC00D70C2C /* Person+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+Convenience.swift"; sourceTree = "<group>"; };
 		8F16CB12258D159000D70C2C /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
+		8F16CB1D258D37A200D70C2C /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		8F16CAE8258D0C0B00D70C2C /* PairRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				8F16CB1C258D378200D70C2C /* Extensions */,
 				8F16CB07258D0C9D00D70C2C /* View Controllers */,
 				8F16CB06258D0C8B00D70C2C /* Model */,
 				8F16CB05258D0C6D00D70C2C /* ModelController */,
@@ -117,6 +120,14 @@
 				8F16CB09258D0D6B00D70C2C /* PairListTableViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8F16CB1C258D378200D70C2C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8F16CB1D258D37A200D70C2C /* ArrayExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +203,7 @@
 				8F16CB0D258D130B00D70C2C /* CoreDataStack.swift in Sources */,
 				8F16CAEA258D0C0B00D70C2C /* AppDelegate.swift in Sources */,
 				8F16CB10258D13AC00D70C2C /* Person+Convenience.swift in Sources */,
+				8F16CB1E258D37A200D70C2C /* ArrayExtension.swift in Sources */,
 				8F16CB0A258D0D6B00D70C2C /* PairListTableViewController.swift in Sources */,
 				8F16CAF4258D0C0B00D70C2C /* PairRandomizer.xcdatamodeld in Sources */,
 				8F16CB13258D159000D70C2C /* PersonController.swift in Sources */,
