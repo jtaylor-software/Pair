@@ -40,8 +40,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Pair Randomizer" id="uSX-JK-t5m">
-                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="1CZ-SC-eIc"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="32d-4t-mwk"/>
+                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="1CZ-SC-eIc">
+                            <connections>
+                                <action selector="randomizeButtonTapped:" destination="OMp-YN-POt" id="Zhi-SZ-xHX"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="32d-4t-mwk">
+                            <connections>
+                                <action selector="addButtonTapped:" destination="OMp-YN-POt" id="dX8-Hj-grj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ra-RH-CT1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
