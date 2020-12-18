@@ -13,6 +13,10 @@ class PairListTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
         presentAddPersonAlert()
@@ -26,19 +30,19 @@ class PairListTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return PersonController.sharedInstance.people.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
 
-        // Configure the cell...
+        let person = PersonController.sharedInstance.people[indexPath.row]
+        cell.textLabel?.text = person.name
 
         return cell
     }
@@ -59,8 +63,10 @@ class PairListTableViewController: UITableViewController {
             textfield.placeholder = "Full Name"
         }
         let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
-            guard let text = alertController.textFields?.first?.text,
-                  !text.isEmpty else { return }
+            guard let name = alertController.textFields?.first?.text,
+                  !name.isEmpty else { return }
+            print("Added: \(name)")
+            PersonController.sharedInstance.addPerson(name: name)
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
