@@ -50,7 +50,8 @@ class PairListTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let personToDelete = PersonController.sharedInstance.people[indexPath.row]
+            PersonController.sharedInstance.deletePerson(person: personToDelete)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -67,6 +68,7 @@ class PairListTableViewController: UITableViewController {
                   !name.isEmpty else { return }
             print("Added: \(name)")
             PersonController.sharedInstance.addPerson(name: name)
+            self.tableView.reloadData()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
