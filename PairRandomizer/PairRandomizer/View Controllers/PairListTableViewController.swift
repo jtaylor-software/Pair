@@ -15,6 +15,7 @@ class PairListTableViewController: UITableViewController {
     
     // MARK: - Actions
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        presentAddPersonAlert()
     }
     @IBAction func randomizeButtonTapped(_ sender: UIBarButtonItem) {
     }
@@ -42,14 +43,32 @@ class PairListTableViewController: UITableViewController {
         return cell
     }
     
-
-    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    // MARK: - Methods
+    
+    func presentAddPersonAlert() {
+        let alertController = UIAlertController(title: "Add Person", message: "Add someone new to the list", preferredStyle: .alert)
+        alertController.addTextField { (textfield) in
+            textfield.placeholder = "Full Name"
+        }
+        let addAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let text = alertController.textFields?.first?.text,
+                  !text.isEmpty else { return }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true)
     }
 
 } //End of class
